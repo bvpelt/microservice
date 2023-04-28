@@ -1,0 +1,90 @@
+spring:
+  application:
+    name: '@project.name@'
+  #  main:
+  #    banner-mode: 'off'
+  data:
+    rest:
+      default-media-type: application/hal+json
+  hateoas:
+    use-hal-as-default-json-media-type: true
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: 'jdbc:postgresql://localhost:5432/personen'
+    username: testuser
+    password: 12345
+  flyway:
+    enabled: true
+    schemas: items
+  jpa:
+    database: postgresql
+    properties:
+      hibernate:
+        order_inserts: true
+        order_updates: true
+        batch_versioned_data: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: false
+        #        metadata_builder_contributor: nl.kadaster.dsov.config.HibernateMetadataBuilderContributor
+        jdbc:
+          batch_size: 100
+        enable_lazy_load_no_trans: true
+        event:
+          merge:
+            entity_copy_observer: allow
+      jakarta:
+        persistence:
+          sharedCache:
+            mode: ALL
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    open-in-view: false
+build:
+  version: '@project.version@'
+  description: '@project.description@'
+  timestamp: '@timestamp@'
+server:
+  port: 8090
+  servlet:
+    context-path: /api/personen/v1
+  error:
+    include-message: always
+    include-binding-errors: always
+  types:
+    print:
+      banner: false
+
+logging:
+  level:
+    #org.hibernate.orm.jdbc.bind: trace
+    web: INFO
+    root: INFO
+    org:
+      geotools:
+        styling: ERROR
+      springframework:
+        boot:
+          autoconfigure: WARN
+    nl:
+      bsoft:
+        kerk: DEBUG
+  file:
+    name: 'logs/${spring.application.name}.log'
+
+management:
+  info:
+    env:
+      enabled: true
+  server:
+    port: '8091'
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      path-mapping:
+        info: app-info
+        health: app-health
+      exposure:
+        include: 'prometheus,health,info,metric'
