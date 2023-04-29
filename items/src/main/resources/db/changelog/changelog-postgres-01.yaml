@@ -1,0 +1,73 @@
+databaseChangeLog:
+  - changeSet:
+      id: 100
+      author: bart
+      dbms: PostgreSQL
+      comment: Create CONCEPTSCHEMA
+      changes:
+        - createTable:
+            schemaName: PUBLIC
+            tableName: ITEM
+            columns:
+              - column:
+                  name: ID
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: CATEGORY
+                  type: varchar(12)
+              - column:
+                  name: TITLE
+                  type: varchar(64)
+              - column:
+                  name: AUTHOR
+                  type: varchar(64)
+              - column:
+                  name: PUBLISHED
+                  type: timestamp
+              - column:
+                  name: CONTENT
+                  type: text
+        - rollback:
+            dropTable:
+              - tableName: ITEM
+
+  - changeSet:
+      id: 110
+      author: bart
+      dbms: PostgreSQL
+      comment: Create ITEM CATEGORY index
+      changes:
+        - createIndex:
+            clustered: true
+            columns:
+              - column:
+                  descending: true
+                  name: CATEGORY
+            indexName: ITEM_CATEGORY_INDEX
+            schemaName: public
+            tableName: ITEM
+            unique: false
+
+  - changeSet:
+      id: 120
+      author: bart
+      dbms: PostgreSQL
+      comment: Create ITEM CATEGORY_PUBLISHED index
+      changes:
+        - createIndex:
+            clustered: true
+            columns:
+              - column:
+                  descending: true
+                  name: CATEGORY
+              - column:
+                  descending: true
+                  name: PUBLISHED
+            indexName: ITEM_CATEGORY_PUBLISHED_INDEX
+            schemaName: public
+            tableName: ITEM
+            unique: true

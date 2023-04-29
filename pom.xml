@@ -26,16 +26,17 @@
     </modules>
 
     <properties>
+        <flywaydb.version>9.12.0</flywaydb.version>
+        <jacoco.version>0.8.10</jacoco.version>
         <java.version>17</java.version>
+        <maven.build.timestamp.format>dd-MM-yyyy HH:mm</maven.build.timestamp.format>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <maven.version>3.6.1</maven.version>
         <maven.compiler.version>3.6.1</maven.compiler.version>
-        <timestamp>${maven.build.timestamp}</timestamp>
-        <maven.build.timestamp.format>dd-MM-yyyy HH:mm</maven.build.timestamp.format>
+        <maven.version>3.6.1</maven.version>
         <org.projectlombok.version>1.18.22</org.projectlombok.version>
-        <jacoco.version>0.8.10</jacoco.version>
         <spring.cloud-version>2022.0.2</spring.cloud-version>
+        <timestamp>${maven.build.timestamp}</timestamp>
     </properties>
 
     <dependencyManagement>
@@ -71,10 +72,16 @@
         </dependency>
 
         <!-- DB -->
+        <!--
         <dependency>
             <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
-            <version>9.12.0</version>
+            <version>${flywaydb.version}</version>
+        </dependency>
+        -->
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
         </dependency>
         <dependency>
             <groupId>org.postgresql</groupId>
@@ -158,6 +165,7 @@
                     </rules>
                 </configuration>
             </plugin>
+            <!--
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -174,6 +182,7 @@
                     </annotationProcessorPaths>
                 </configuration>
             </plugin>
+            -->
         </plugins>
     </build>
 </project>

@@ -1,8 +1,8 @@
 spring:
   application:
     name: '@project.name@'
-#  main:
-#    banner-mode: 'off'
+  #  main:
+  #    banner-mode: 'off'
   data:
     rest:
       default-media-type: application/hal+json
@@ -13,9 +13,12 @@ spring:
     url: 'jdbc:postgresql://localhost:5432/items'
     username: testuser
     password: 12345
-  flyway:
+  #  flyway:
+  #    enabled: true
+  #    schemas: public
+  liquibase:
+    change-log: classpath:/db/changelog/changelog-postgres-master.yaml
     enabled: true
-    schemas: items
   jpa:
     database: postgresql
     properties:
@@ -25,7 +28,7 @@ spring:
         batch_versioned_data: true
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: false
-#        metadata_builder_contributor: nl.kadaster.dsov.config.HibernateMetadataBuilderContributor
+        #        metadata_builder_contributor: nl.kadaster.dsov.config.HibernateMetadataBuilderContributor
         jdbc:
           batch_size: 100
         enable_lazy_load_no_trans: true
@@ -40,10 +43,12 @@ spring:
       ddl-auto: update
     show-sql: false
     open-in-view: false
+
 build:
   version: '@project.version@'
   description: '@project.description@'
   timestamp: '@timestamp@'
+
 server:
   port: 8080
   servlet:
@@ -81,10 +86,23 @@ management:
   endpoint:
     health:
       show-details: always
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
   endpoints:
     web:
       path-mapping:
         info: app-info
         health: app-health
       exposure:
-        include: 'prometheus,health,info,metric'
+        include: '*'
+        exclude:
+
+info:
+  app:
+    name: '@project.name@'
+    description: '@project.description@'
+    version: '@project.version@'
+    java:
+      version: '@java.version@'

@@ -1,0 +1,72 @@
+databaseChangeLog:
+  - changeSet:
+      id: 100
+      author: bart
+      dbms: PostgreSQL
+      comment: Create CONCEPTSCHEMA
+      changes:
+        - createTable:
+            schemaName: PUBLIC
+            tableName: ITEM
+            columns:
+              - column:
+                  name: ID
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: VOORNAAM
+                  type: varchar(12)
+              - column:
+                  name: TUSSENVOEGSEL
+                  type: varchar(12)
+              - column:
+                  name: ACHTERNAAM
+                  type: varchar(64)
+              - column:
+                  name: CREATED
+                  type: timestamp
+              - column:
+                  name: STATE
+                  type: varchar(12)
+                  constraints:
+                    nullable: false
+        - rollback:
+            dropTable:
+              - tableName: ITEM
+
+  - changeSet:
+      id: 110
+      author: bart
+      dbms: PostgreSQL
+      comment: Create PERSOON VOORNAAM index
+      changes:
+        - createIndex:
+            clustered: true
+            columns:
+              - column:
+                  descending: true
+                  name: VOORNAAM
+            indexName: PERSOON_VOORNAAM_INDEX
+            schemaName: public
+            tableName: PERSOON
+            unique: false
+
+  - changeSet:
+      id: 120
+      author: bart
+      dbms: PostgreSQL
+      comment: Create PERSOON ACHTERNAAM index
+      changes:
+        - createIndex:
+            clustered: true
+            columns:
+              - column:
+                  descending: true
+                  name: ACHTERNAAM
+            indexName: PERSOON_ACHTERNAAM_INDEX
+            schemaName: public
+            tableName: PERSOON
+            unique: false

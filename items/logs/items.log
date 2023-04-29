@@ -1,0 +1,277 @@
+2023-04-28T20:56:16.340+02:00  INFO 19043 --- [main] n.b.k.microservices.items.Application    : Starting Application using Java 18.0.2 with PID 19043 (/home/bvpelt/Develop/microservice/items/target/classes started by bvpelt in /home/bvpelt/Develop/microservice/items)
+2023-04-28T20:56:16.341+02:00 DEBUG 19043 --- [main] n.b.k.microservices.items.Application    : Running with Spring Boot v3.0.6, Spring v6.0.8
+2023-04-28T20:56:16.341+02:00  INFO 19043 --- [main] n.b.k.microservices.items.Application    : No active profile set, falling back to 1 default profile: "default"
+2023-04-28T20:56:16.747+02:00  INFO 19043 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-28T20:56:16.757+02:00  INFO 19043 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2023-04-28T20:56:17.004+02:00  INFO 19043 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-28T20:56:17.010+02:00  INFO 19043 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-28T20:56:17.010+02:00  INFO 19043 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-04-28T20:56:17.077+02:00  INFO 19043 --- [main] o.a.c.c.C.[.[localhost].[/api/items/v1]  : Initializing Spring embedded WebApplicationContext
+2023-04-28T20:56:17.077+02:00  INFO 19043 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 707 ms
+2023-04-28T20:56:17.180+02:00  INFO 19043 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-28T20:56:17.391+02:00  INFO 19043 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@72465eb2
+2023-04-28T20:56:17.392+02:00  INFO 19043 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-28T20:56:17.510+02:00  INFO 19043 --- [main] liquibase.database                       : Set default schema name to public
+2023-04-28T20:56:17.686+02:00  INFO 19043 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-04-28T20:56:17.819+02:00  INFO 19043 --- [main] liquibase.changelog                      : Creating database history table with name: public.databasechangelog
+2023-04-28T20:56:17.881+02:00  INFO 19043 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2023-04-28T20:56:18.028+02:00  INFO 19043 --- [main] liquibase.changelog                      : Table ITEM created
+2023-04-28T20:56:18.037+02:00  INFO 19043 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog-postgres-01.yaml::100::bart ran successfully in 66ms
+2023-04-28T20:56:18.180+02:00  INFO 19043 --- [main] liquibase.changelog                      : Index ITEM_CATEGORY_INDEX created
+2023-04-28T20:56:18.196+02:00  INFO 19043 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog-postgres-01.yaml::110::bart ran successfully in 142ms
+2023-04-28T20:56:18.364+02:00  INFO 19043 --- [main] liquibase.changelog                      : Index ITEM_CATEGORY_PUBLISHED_INDEX created
+2023-04-28T20:56:18.371+02:00  INFO 19043 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog-postgres-01.yaml::120::bart ran successfully in 167ms
+2023-04-28T20:56:18.387+02:00  INFO 19043 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-04-28T20:56:18.459+02:00  INFO 19043 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-28T20:56:18.478+02:00  INFO 19043 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-28T20:56:18.609+02:00  INFO 19043 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-04-28T20:56:18.733+02:00  INFO 19043 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-28T20:56:18.738+02:00  INFO 19043 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-28T20:56:19.040+02:00  INFO 19043 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/api/items/v1'
+2023-04-28T20:56:19.073+02:00  INFO 19043 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2023-04-28T20:56:19.074+02:00  INFO 19043 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-28T20:56:19.074+02:00  INFO 19043 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-04-28T20:56:19.081+02:00  INFO 19043 --- [main] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-04-28T20:56:19.081+02:00  INFO 19043 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 39 ms
+2023-04-28T20:56:19.089+02:00  INFO 19043 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
+2023-04-28T20:56:19.109+02:00  INFO 19043 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2023-04-28T20:56:19.119+02:00  INFO 19043 --- [main] n.b.k.microservices.items.Application    : Started Application in 3.029 seconds (process running for 3.166)
+2023-04-28T20:57:29.866+02:00  INFO 19043 --- [http-nio-8080-exec-5] o.a.c.c.C.[.[localhost].[/api/items/v1]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-28T20:57:29.866+02:00  INFO 19043 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-28T20:57:29.867+02:00  INFO 19043 --- [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-04-28T20:58:19.021+02:00  INFO 19043 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-28T20:58:19.023+02:00  INFO 19043 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-28T20:58:19.026+02:00  INFO 19043 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-28T20:58:50.851+02:00  INFO 19237 --- [main] n.b.k.microservices.items.Application    : Starting Application using Java 18.0.2 with PID 19237 (/home/bvpelt/Develop/microservice/items/target/classes started by bvpelt in /home/bvpelt/Develop/microservice/items)
+2023-04-28T20:58:50.852+02:00 DEBUG 19237 --- [main] n.b.k.microservices.items.Application    : Running with Spring Boot v3.0.6, Spring v6.0.8
+2023-04-28T20:58:50.852+02:00  INFO 19237 --- [main] n.b.k.microservices.items.Application    : No active profile set, falling back to 1 default profile: "default"
+2023-04-28T20:58:51.257+02:00  INFO 19237 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-28T20:58:51.267+02:00  INFO 19237 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2023-04-28T20:58:51.532+02:00  INFO 19237 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-28T20:58:51.537+02:00  INFO 19237 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-28T20:58:51.537+02:00  INFO 19237 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-04-28T20:58:51.586+02:00  INFO 19237 --- [main] o.a.c.c.C.[.[localhost].[/api/items/v1]  : Initializing Spring embedded WebApplicationContext
+2023-04-28T20:58:51.586+02:00  INFO 19237 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 707 ms
+2023-04-28T20:58:51.686+02:00  INFO 19237 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-28T20:58:51.844+02:00  INFO 19237 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2c9d90fc
+2023-04-28T20:58:51.845+02:00  INFO 19237 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-28T20:58:51.929+02:00  INFO 19237 --- [main] liquibase.database                       : Set default schema name to public
+2023-04-28T20:58:51.986+02:00  INFO 19237 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-04-28T20:58:52.099+02:00  INFO 19237 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2023-04-28T20:58:52.128+02:00  INFO 19237 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-04-28T20:58:52.167+02:00  INFO 19237 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-28T20:58:52.188+02:00  INFO 19237 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-28T20:58:52.320+02:00  INFO 19237 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-04-28T20:58:52.446+02:00  INFO 19237 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-28T20:58:52.451+02:00  INFO 19237 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-28T20:58:52.770+02:00  INFO 19237 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/api/items/v1'
+2023-04-28T20:58:52.801+02:00  INFO 19237 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2023-04-28T20:58:52.802+02:00  INFO 19237 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-28T20:58:52.802+02:00  INFO 19237 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-04-28T20:58:52.809+02:00  INFO 19237 --- [main] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-04-28T20:58:52.809+02:00  INFO 19237 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 37 ms
+2023-04-28T20:58:52.818+02:00  INFO 19237 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
+2023-04-28T20:58:52.837+02:00  INFO 19237 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2023-04-28T20:58:52.847+02:00  INFO 19237 --- [main] n.b.k.microservices.items.Application    : Started Application in 2.235 seconds (process running for 2.38)
+2023-04-28T20:59:01.414+02:00  INFO 19237 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-28T20:59:01.414+02:00  INFO 19237 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-28T20:59:01.415+02:00  INFO 19237 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-04-28T21:23:07.133+02:00  INFO 20144 --- [main] n.b.k.microservices.items.Application    : Starting Application using Java 18.0.2 with PID 20144 (/home/bvpelt/Develop/microservice/items/target/classes started by bvpelt in /home/bvpelt/Develop/microservice/items)
+2023-04-28T21:23:07.134+02:00 DEBUG 20144 --- [main] n.b.k.microservices.items.Application    : Running with Spring Boot v3.0.6, Spring v6.0.8
+2023-04-28T21:23:07.135+02:00  INFO 20144 --- [main] n.b.k.microservices.items.Application    : No active profile set, falling back to 1 default profile: "default"
+2023-04-28T21:23:07.521+02:00  INFO 20144 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-28T21:23:07.564+02:00  INFO 20144 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39 ms. Found 1 JPA repository interfaces.
+2023-04-28T21:23:07.838+02:00  INFO 20144 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-28T21:23:07.843+02:00  INFO 20144 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-28T21:23:07.843+02:00  INFO 20144 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-04-28T21:23:07.896+02:00  INFO 20144 --- [main] o.a.c.c.C.[.[localhost].[/api/items/v1]  : Initializing Spring embedded WebApplicationContext
+2023-04-28T21:23:07.896+02:00  INFO 20144 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 735 ms
+2023-04-28T21:23:07.995+02:00  INFO 20144 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-28T21:23:08.143+02:00  INFO 20144 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4f3356c0
+2023-04-28T21:23:08.144+02:00  INFO 20144 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-28T21:23:08.231+02:00  INFO 20144 --- [main] liquibase.database                       : Set default schema name to public
+2023-04-28T21:23:08.282+02:00  INFO 20144 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-04-28T21:23:08.397+02:00  INFO 20144 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2023-04-28T21:23:08.423+02:00  INFO 20144 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-04-28T21:23:08.425+02:00  WARN 20144 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Validation Failed:
+     1 changesets check sum
+          db/changelog/changelog-postgres-01.yaml::100::bart was: 8:94bd458fad6a1b56124bea0770d9e797 but is now: 8:ea5d14e96b73646a66f4d9de9d81e63a
+
+2023-04-28T21:23:08.425+02:00  INFO 20144 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-28T21:23:08.440+02:00  INFO 20144 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-28T21:23:08.442+02:00  INFO 20144 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-04-28T21:23:08.460+02:00 ERROR 20144 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Validation Failed:
+     1 changesets check sum
+          db/changelog/changelog-postgres-01.yaml::100::bart was: 8:94bd458fad6a1b56124bea0770d9e797 but is now: 8:ea5d14e96b73646a66f4d9de9d81e63a
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770) ~[spring-beans-6.0.8.jar:6.0.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598) ~[spring-beans-6.0.8.jar:6.0.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520) ~[spring-beans-6.0.8.jar:6.0.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.8.jar:6.0.8]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.8.jar:6.0.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.8.jar:6.0.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.8.jar:6.0.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313) ~[spring-beans-6.0.8.jar:6.0.8]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.8.jar:6.0.8]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1132) ~[spring-context-6.0.8.jar:6.0.8]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:907) ~[spring-context-6.0.8.jar:6.0.8]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:584) ~[spring-context-6.0.8.jar:6.0.8]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.0.6.jar:3.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732) ~[spring-boot-3.0.6.jar:3.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) ~[spring-boot-3.0.6.jar:3.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:310) ~[spring-boot-3.0.6.jar:3.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1304) ~[spring-boot-3.0.6.jar:3.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1293) ~[spring-boot-3.0.6.jar:3.0.6]
+	at nl.bsoft.kerk.microservices.items.Application.main(Application.java:12) ~[classes/:na]
+Caused by: liquibase.exception.ValidationFailedException: Validation Failed:
+     1 changesets check sum
+          db/changelog/changelog-postgres-01.yaml::100::bart was: 8:94bd458fad6a1b56124bea0770d9e797 but is now: 8:ea5d14e96b73646a66f4d9de9d81e63a
+
+	at liquibase.changelog.DatabaseChangeLog.validate(DatabaseChangeLog.java:337) ~[liquibase-core-4.17.2.jar:na]
+	at liquibase.Liquibase.lambda$update$1(Liquibase.java:257) ~[liquibase-core-4.17.2.jar:na]
+	at liquibase.Scope.lambda$child$0(Scope.java:180) ~[liquibase-core-4.17.2.jar:na]
+	at liquibase.Scope.child(Scope.java:189) ~[liquibase-core-4.17.2.jar:na]
+	at liquibase.Scope.child(Scope.java:179) ~[liquibase-core-4.17.2.jar:na]
+	at liquibase.Scope.child(Scope.java:158) ~[liquibase-core-4.17.2.jar:na]
+	at liquibase.Liquibase.runInScope(Liquibase.java:2447) ~[liquibase-core-4.17.2.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:236) ~[liquibase-core-4.17.2.jar:na]
+	at liquibase.Liquibase.update(Liquibase.java:221) ~[liquibase-core-4.17.2.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:328) ~[liquibase-core-4.17.2.jar:na]
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:283) ~[liquibase-core-4.17.2.jar:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1816) ~[spring-beans-6.0.8.jar:6.0.8]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766) ~[spring-beans-6.0.8.jar:6.0.8]
+	... 18 common frames omitted
+
+2023-04-28T21:23:48.383+02:00  INFO 20261 --- [main] n.b.k.microservices.items.Application    : Starting Application using Java 18.0.2 with PID 20261 (/home/bvpelt/Develop/microservice/items/target/classes started by bvpelt in /home/bvpelt/Develop/microservice/items)
+2023-04-28T21:23:48.383+02:00 DEBUG 20261 --- [main] n.b.k.microservices.items.Application    : Running with Spring Boot v3.0.6, Spring v6.0.8
+2023-04-28T21:23:48.384+02:00  INFO 20261 --- [main] n.b.k.microservices.items.Application    : No active profile set, falling back to 1 default profile: "default"
+2023-04-28T21:23:48.774+02:00  INFO 20261 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-28T21:23:48.804+02:00  INFO 20261 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 1 JPA repository interfaces.
+2023-04-28T21:23:49.056+02:00  INFO 20261 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-28T21:23:49.061+02:00  INFO 20261 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-28T21:23:49.061+02:00  INFO 20261 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-04-28T21:23:49.114+02:00  INFO 20261 --- [main] o.a.c.c.C.[.[localhost].[/api/items/v1]  : Initializing Spring embedded WebApplicationContext
+2023-04-28T21:23:49.114+02:00  INFO 20261 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 703 ms
+2023-04-28T21:23:49.210+02:00  INFO 20261 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-28T21:23:49.359+02:00  INFO 20261 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@448462f0
+2023-04-28T21:23:49.360+02:00  INFO 20261 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-28T21:23:49.437+02:00  INFO 20261 --- [main] liquibase.database                       : Set default schema name to public
+2023-04-28T21:23:49.530+02:00  INFO 20261 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-04-28T21:23:49.614+02:00  INFO 20261 --- [main] liquibase.changelog                      : Creating database history table with name: public.databasechangelog
+2023-04-28T21:23:49.658+02:00  INFO 20261 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2023-04-28T21:23:49.803+02:00  INFO 20261 --- [main] liquibase.changelog                      : Table ITEM created
+2023-04-28T21:23:49.814+02:00  INFO 20261 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog-postgres-01.yaml::100::bart ran successfully in 69ms
+2023-04-28T21:23:49.954+02:00  INFO 20261 --- [main] liquibase.changelog                      : Index ITEM_CATEGORY_INDEX created
+2023-04-28T21:23:49.965+02:00  INFO 20261 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog-postgres-01.yaml::110::bart ran successfully in 133ms
+2023-04-28T21:23:50.113+02:00  INFO 20261 --- [main] liquibase.changelog                      : Index ITEM_CATEGORY_PUBLISHED_INDEX created
+2023-04-28T21:23:50.125+02:00  INFO 20261 --- [main] liquibase.changelog                      : ChangeSet db/changelog/changelog-postgres-01.yaml::120::bart ran successfully in 152ms
+2023-04-28T21:23:50.140+02:00  INFO 20261 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-04-28T21:23:50.213+02:00  INFO 20261 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-28T21:23:50.234+02:00  INFO 20261 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-28T21:23:50.365+02:00  INFO 20261 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-04-28T21:23:50.701+02:00  INFO 20261 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-28T21:23:50.705+02:00  INFO 20261 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-28T21:23:51.087+02:00  WARN 20261 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2023-04-28T21:23:51.088+02:00  INFO 20261 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-28T21:23:51.089+02:00  INFO 20261 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-28T21:23:51.093+02:00  INFO 20261 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-28T21:23:51.094+02:00  INFO 20261 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-04-28T21:23:51.113+02:00 ERROR 20261 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2023-04-28T21:24:40.479+02:00  INFO 19237 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-28T21:24:40.480+02:00  INFO 19237 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-28T21:24:40.484+02:00  INFO 19237 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-28T21:25:24.116+02:00  INFO 20468 --- [main] n.b.k.microservices.items.Application    : Starting Application using Java 18.0.2 with PID 20468 (/home/bvpelt/Develop/microservice/items/target/classes started by bvpelt in /home/bvpelt/Develop/microservice/items)
+2023-04-28T21:25:24.116+02:00 DEBUG 20468 --- [main] n.b.k.microservices.items.Application    : Running with Spring Boot v3.0.6, Spring v6.0.8
+2023-04-28T21:25:24.117+02:00  INFO 20468 --- [main] n.b.k.microservices.items.Application    : No active profile set, falling back to 1 default profile: "default"
+2023-04-28T21:25:24.504+02:00  INFO 20468 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-28T21:25:24.533+02:00  INFO 20468 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 1 JPA repository interfaces.
+2023-04-28T21:25:24.787+02:00  INFO 20468 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-28T21:25:24.792+02:00  INFO 20468 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-28T21:25:24.793+02:00  INFO 20468 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-04-28T21:25:24.841+02:00  INFO 20468 --- [main] o.a.c.c.C.[.[localhost].[/api/items/v1]  : Initializing Spring embedded WebApplicationContext
+2023-04-28T21:25:24.841+02:00  INFO 20468 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 698 ms
+2023-04-28T21:25:24.945+02:00  INFO 20468 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-28T21:25:25.095+02:00  INFO 20468 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2eb0cefe
+2023-04-28T21:25:25.096+02:00  INFO 20468 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-28T21:25:25.173+02:00  INFO 20468 --- [main] liquibase.database                       : Set default schema name to public
+2023-04-28T21:25:25.227+02:00  INFO 20468 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-04-28T21:25:25.343+02:00  INFO 20468 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2023-04-28T21:25:25.377+02:00  INFO 20468 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-04-28T21:25:25.418+02:00  INFO 20468 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-28T21:25:25.440+02:00  INFO 20468 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-28T21:25:25.576+02:00  INFO 20468 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-04-28T21:25:25.915+02:00  INFO 20468 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-28T21:25:25.919+02:00  INFO 20468 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-28T21:25:26.314+02:00  INFO 20468 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/api/items/v1'
+2023-04-28T21:25:26.344+02:00  INFO 20468 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2023-04-28T21:25:26.345+02:00  INFO 20468 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-28T21:25:26.345+02:00  INFO 20468 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-04-28T21:25:26.351+02:00  INFO 20468 --- [main] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-04-28T21:25:26.351+02:00  INFO 20468 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 35 ms
+2023-04-28T21:25:26.361+02:00  INFO 20468 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoint(s) beneath base path '/actuator'
+2023-04-28T21:25:26.384+02:00  INFO 20468 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2023-04-28T21:25:26.394+02:00  INFO 20468 --- [main] n.b.k.microservices.items.Application    : Started Application in 2.517 seconds (process running for 2.662)
+2023-04-28T21:25:41.541+02:00  INFO 20468 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-28T21:25:41.541+02:00  INFO 20468 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-28T21:25:41.541+02:00  INFO 20468 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-04-28T21:26:29.898+02:00  INFO 20468 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-28T21:26:29.899+02:00  INFO 20468 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-28T21:26:29.902+02:00  INFO 20468 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-04-28T21:36:53.920+02:00  INFO 21296 --- [main] n.b.k.microservices.items.Application    : Starting Application using Java 18.0.2 with PID 21296 (/home/bvpelt/Develop/microservice/items/target/classes started by bvpelt in /home/bvpelt/Develop/microservice/items)
+2023-04-28T21:36:53.921+02:00 DEBUG 21296 --- [main] n.b.k.microservices.items.Application    : Running with Spring Boot v3.0.6, Spring v6.0.8
+2023-04-28T21:36:53.922+02:00  INFO 21296 --- [main] n.b.k.microservices.items.Application    : No active profile set, falling back to 1 default profile: "default"
+2023-04-28T21:36:54.331+02:00  INFO 21296 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-28T21:36:54.360+02:00  INFO 21296 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 1 JPA repository interfaces.
+2023-04-28T21:36:54.614+02:00  INFO 21296 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-04-28T21:36:54.619+02:00  INFO 21296 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-28T21:36:54.619+02:00  INFO 21296 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-04-28T21:36:54.671+02:00  INFO 21296 --- [main] o.a.c.c.C.[.[localhost].[/api/items/v1]  : Initializing Spring embedded WebApplicationContext
+2023-04-28T21:36:54.672+02:00  INFO 21296 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 723 ms
+2023-04-28T21:36:54.768+02:00  INFO 21296 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-04-28T21:36:54.916+02:00  INFO 21296 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2cccf134
+2023-04-28T21:36:54.917+02:00  INFO 21296 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-04-28T21:36:55.002+02:00  INFO 21296 --- [main] liquibase.database                       : Set default schema name to public
+2023-04-28T21:36:55.098+02:00  INFO 21296 --- [main] liquibase.lockservice                    : Successfully acquired change log lock
+2023-04-28T21:36:55.214+02:00  INFO 21296 --- [main] liquibase.changelog                      : Reading from public.databasechangelog
+2023-04-28T21:36:55.248+02:00  INFO 21296 --- [main] liquibase.lockservice                    : Successfully released change log lock
+2023-04-28T21:36:55.292+02:00  INFO 21296 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-04-28T21:36:55.314+02:00  INFO 21296 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-04-28T21:36:55.446+02:00  INFO 21296 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-04-28T21:36:55.797+02:00  INFO 21296 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-04-28T21:36:55.801+02:00  INFO 21296 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-04-28T21:36:56.218+02:00  INFO 21296 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/api/items/v1'
+2023-04-28T21:36:56.250+02:00  INFO 21296 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2023-04-28T21:36:56.250+02:00  INFO 21296 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-04-28T21:36:56.250+02:00  INFO 21296 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-04-28T21:36:56.257+02:00  INFO 21296 --- [main] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2023-04-28T21:36:56.257+02:00  INFO 21296 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 37 ms
+2023-04-28T21:36:56.266+02:00  INFO 21296 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 16 endpoint(s) beneath base path '/actuator'
+2023-04-28T21:36:56.288+02:00  INFO 21296 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2023-04-28T21:36:56.297+02:00  INFO 21296 --- [main] n.b.k.microservices.items.Application    : Started Application in 2.617 seconds (process running for 2.76)
+2023-04-28T21:37:06.329+02:00  INFO 21296 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-28T21:37:06.329+02:00  INFO 21296 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-28T21:37:06.330+02:00  INFO 21296 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-04-28T21:38:04.174+02:00  WARN 21296 --- [http-nio-8081-exec-4] ocalVariableTableParameterNameDiscoverer : Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.zaxxer.hikari.pool.HikariPool
+2023-04-28T21:38:20.571+02:00  INFO 21296 --- [http-nio-8081-exec-9] o.a.c.c.C.[.[localhost].[/api/items/v1]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-28T21:38:20.571+02:00  INFO 21296 --- [http-nio-8081-exec-9] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-04-28T21:38:20.572+02:00  INFO 21296 --- [http-nio-8081-exec-9] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-04-28T21:39:11.887+02:00  INFO 21296 --- [http-nio-8081-exec-4] liquibase.database                       : Set default schema name to public
+2023-04-28T21:39:11.888+02:00  INFO 21296 --- [http-nio-8081-exec-4] liquibase.changelog                      : Reading from public.databasechangelog
+2023-04-28T21:51:19.980+02:00  INFO 21296 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-04-28T21:51:19.981+02:00  INFO 21296 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-04-28T21:51:19.984+02:00  INFO 21296 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

@@ -12,6 +12,18 @@
 
     <build>
         <plugins>
+            <!--
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>${flywaydb.version}</version>
+                <configuration>
+                    <url>jdbc:postgresql://localhost:5432/personen</url>
+                    <user>testuser</user>
+                    <password>12345</password>
+                </configuration>
+            </plugin>
+            -->
         </plugins>
     </build>
 </project>

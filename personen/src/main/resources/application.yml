@@ -13,9 +13,12 @@ spring:
     url: 'jdbc:postgresql://localhost:5432/personen'
     username: testuser
     password: 12345
-  flyway:
+#  flyway:
+#    enabled: true
+#    schemas: public
+  liquibase:
+    change-log: classpath:/db/changelog/changelog-postgres-master.yaml
     enabled: true
-    schemas: items
   jpa:
     database: postgresql
     properties:
