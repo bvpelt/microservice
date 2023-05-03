@@ -11,10 +11,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
+import java.text.SimpleDateFormat;
 import java.time.OffsetDateTime;
 
 @Configuration
 public class JacksonConfig {
+    public static ObjectMapper getObjectMapper() {
+        return new JacksonConfig().objectMapper();
+    }
+
     @Bean
     @Primary
     public ObjectMapper objectMapper() {
@@ -25,14 +30,15 @@ public class JacksonConfig {
         mapper.enable(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT);
         mapper.enable(DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT);
         mapper.configure(DeserializationFeature.FAIL_ON_NULL_CREATOR_PROPERTIES, false);
+
+        //mapper.setDateFormat(new StdDateFormat());
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+        mapper.setDateFormat(sdf);
+
         mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
         return mapper;
-    }
-
-    public static ObjectMapper getObjectMapper() {
-        return new JacksonConfig().objectMapper();
     }
 
     private JavaTimeModule getTimeModule() {

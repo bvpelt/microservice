@@ -1,10 +1,11 @@
 package nl.bsoft.kerk.microservices.items.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 @Entity
@@ -16,18 +17,25 @@ public class Item implements Serializable {
     @Column(name = "ID")
     private Long id;
 
+    @NotNull
     @Column(name = "CATEGORY")
     private String category;
 
+    @NotNull
     @Column(name = "TITLE")
     private String title;
 
+    @NotNull
     @Column(name = "AUTHOR")
     private String author;
 
+    /*
+    If not present, the current date-time of moment data is presented is used
+     */
     @Column(name = "PUBLISHED")
-    private Date published;
+    private LocalDateTime published;
 
+    @NotNull
     @Column(name = "CONTENT")
     private String content;
 
