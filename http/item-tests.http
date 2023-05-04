@@ -23,6 +23,21 @@ Content-Type: application/json
 
 ###
 
+
+POST http://localhost:8080/api/items/v1/items
+Content-Type: application/json
+
+{
+  "id": 1,
+  "category": "kerkdienst",
+  "title": "Beroepingswerk",
+  "author": "Jan Langeraar",
+  "published": "2023-05-01T10:00",
+  "content": "Op dit moment is er over het beroepingswerk niets te melden"
+}
+
+###
+
 POST http://localhost:8080/api/items/v1/items
 Content-Type: application/json
 

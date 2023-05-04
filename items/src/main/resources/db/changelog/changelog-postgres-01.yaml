@@ -70,4 +70,4 @@ databaseChangeLog:
             indexName: ITEM_CATEGORY_PUBLISHED_INDEX
             schemaName: public
             tableName: ITEM
-            unique: true
+            unique: false

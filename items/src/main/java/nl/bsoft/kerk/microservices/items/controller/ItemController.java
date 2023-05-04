@@ -1,6 +1,8 @@
 package nl.bsoft.kerk.microservices.items.controller;
 
+import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import nl.bsoft.kerk.microservices.items.model.Item;
 import nl.bsoft.kerk.microservices.items.service.ItemService;
 import org.springframework.web.bind.annotation.*;
@@ -9,8 +11,10 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
+@Slf4j
 @AllArgsConstructor
 @RestController
+@Transactional
 public class ItemController {
 
     private ItemService itemService;
@@ -36,10 +40,13 @@ public class ItemController {
 
     @PostMapping("/items")
     public Item addItem(@RequestBody Item item) {
+        log.info("New item: {}", item);
         if (item.getPublished() == null) {
             item.setPublished(LocalDateTime.now());
         }
-        return itemService.addItem(item);
+        Item result = itemService.addItem(item);
+        log.info("Added item: {}", result);
+        return result;
     }
 
     @DeleteMapping("/items/{id}")
