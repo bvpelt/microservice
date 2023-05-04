@@ -1,0 +1,24 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    web: INFO
+    root: INFO
+    org:
+      geotools:
+        styling: ERROR
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+      springframework:
+        boot:
+          autoconfigure: WARN
+    nl:
+      bsoft:
+        kerk: DEBUG
+  file:
+    name: 'logs/${spring.application.name}.log'

@@ -13,9 +13,9 @@ spring:
     url: 'jdbc:postgresql://localhost:5432/personen'
     username: testuser
     password: 12345
-#  flyway:
-#    enabled: true
-#    schemas: public
+  #  flyway:
+  #    enabled: true
+  #    schemas: public
   liquibase:
     change-log: classpath:/db/changelog/changelog-postgres-master.yaml
     enabled: true
@@ -48,9 +48,8 @@ build:
   description: '@project.description@'
   timestamp: '@timestamp@'
 server:
-  port: 8090
   servlet:
-    context-path: /api/personen/v1
+    context-path: /api/persons/v1
   error:
     include-message: always
     include-binding-errors: always

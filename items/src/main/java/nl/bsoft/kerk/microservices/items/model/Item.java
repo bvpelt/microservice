@@ -2,6 +2,7 @@ package nl.bsoft.kerk.microservices.items.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -19,14 +20,17 @@ public class Item implements Serializable {
 
     @NotNull
     @Column(name = "CATEGORY")
+    @Size(min=1, max=12)
     private String category;
 
     @NotNull
     @Column(name = "TITLE")
+    @Size(min=1, max=64)
     private String title;
 
     @NotNull
     @Column(name = "AUTHOR")
+    @Size(min=1, max=64)
     private String author;
 
     /*

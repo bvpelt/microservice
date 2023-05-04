@@ -7,7 +7,7 @@ databaseChangeLog:
       changes:
         - createTable:
             schemaName: PUBLIC
-            tableName: ITEM
+            tableName: PERSON
             columns:
               - column:
                   name: ID
@@ -51,14 +51,14 @@ databaseChangeLog:
                   name: VOORNAAM
             indexName: PERSOON_VOORNAAM_INDEX
             schemaName: public
-            tableName: PERSOON
+            tableName: PERSON
             unique: false
 
   - changeSet:
       id: 120
       author: bart
       dbms: PostgreSQL
-      comment: Create PERSOON ACHTERNAAM index
+      comment: Create PERSOON ACHTERNAAM TUSSENVOEGSEL index
       changes:
         - createIndex:
             clustered: true
@@ -66,7 +66,10 @@ databaseChangeLog:
               - column:
                   descending: true
                   name: ACHTERNAAM
-            indexName: PERSOON_ACHTERNAAM_INDEX
+              - column:
+                  descending: true
+                  name: TUSSENVOEGSEL
+            indexName: PERSOON_ACHTERNAAM_TUSSENVOEGSEL_INDEX
             schemaName: public
-            tableName: PERSOON
+            tableName: PERSON
             unique: false

@@ -1,0 +1,25 @@
+server:
+  port: 8090
+
+
+logging:
+  level:
+    web: INFO
+    root: INFO
+    org:
+      geotools:
+        styling: ERROR
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+      springframework:
+        boot:
+          autoconfigure: WARN
+    nl:
+      bsoft:
+        kerk: DEBUG
+  file:
+    nam

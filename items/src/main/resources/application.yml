@@ -50,7 +50,6 @@ build:
   timestamp: '@timestamp@'
 
 server:
-  port: 8080
   servlet:
     context-path: /api/items/v1
   error:
@@ -68,18 +67,12 @@ logging:
     org:
       geotools:
         styling: ERROR
-      hibernate:
-        SQL: DEBUG
-        type:
-          descriptor:
-            sql:
-              BasicBinder: TRACE
       springframework:
         boot:
           autoconfigure: WARN
     nl:
       bsoft:
-        kerk: DEBUG
+        kerk: INFO
   file:
     name: 'logs/${spring.application.name}.log'
 
