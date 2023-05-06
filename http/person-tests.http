@@ -12,7 +12,14 @@ Content-Type: application/json
   "tussenvoegsel": "de",
   "achternaam": "Vries",
   "created": "2023-04-01T08:00",
-  "state": "created"
+  "state": "created",
+  "username": "mark@gmail.com",
+  "password": "123456",
+  "roles": [
+    {
+      "name": "USER"
+    }
+  ]
 }
 
 ###
@@ -26,7 +33,47 @@ Content-Type: application/json
   "tussenvoegsel": null,
   "achternaam": "Cortenbach",
   "created": "2023-04-01T08:00",
-  "state": "created"
+  "state": "created",
+  "username": "frans@gmail.com",
+  "password": "123456",
+  "roles": [
+    {
+      "name": "ADMIN"
+    },
+    {
+      "name": "USER"
+    }
+  ]
+}
+
+###
+
+POST http://localhost:8090/api/persons/v1/person
+Content-Type: application/json
+
+{
+  "id": 3,
+  "voornaam": "Asterix",
+  "tussenvoegsel": "van der",
+  "achternaam": "Laan",
+  "created": "2023-05-01T08:00",
+  "state": "created",
+  "username": "asterix@gmail.com",
+  "password": "123456",
+  "roles": [
+    {
+      "name": "ADMIN"
+    },
+    {
+      "name": "DATABASE"
+    },
+    {
+      "name": "EDITOR"
+    },
+    {
+      "name": "USER"
+    }
+  ]
 }
 
 ###
@@ -52,5 +99,16 @@ DELETE http://localhost:8090/api/persons/v1/person/1
 ###
 
 DELETE http://localhost:8090/api/persons/v1/person/2
+
+###
+
+
+GET http://localhost:8090/api/persons/v1/role
+Accept: application/json
+
+###
+
+GET http://localhost:8090/api/persons/v1/role/1
+Accept: application/json
 
 ###

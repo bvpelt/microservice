@@ -1,4 +1,3 @@
-
 GET http://localhost:8080/api/items/v1/items
 Accept: application/json
 
@@ -46,7 +45,6 @@ Content-Type: application/json
   "category": "markt",
   "title": "Skelter",
   "author": "Jan Noppe",
-
   "content": "Doordat de kinderen groter worden is het nu mogelijk om een mooie skelter te kopen. Vraagprijs 50 euro"
 }
 
@@ -60,7 +58,6 @@ Content-Type: application/json
   "id": 3,
   "category": "vraag",
   "author": "Jan de Graaf",
-
   "content": "Voor vluchteling die naar cursus moet een (gebruikte) fiets gevraagd"
 }
 

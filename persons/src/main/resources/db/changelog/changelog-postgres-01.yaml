@@ -33,9 +33,19 @@ databaseChangeLog:
                   type: varchar(12)
                   constraints:
                     nullable: false
+              - column:
+                  name: USERNAME
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: PASSWORD
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
         - rollback:
             dropTable:
-              - tableName: ITEM
+              - tableName: PERSON
 
   - changeSet:
       id: 110
@@ -73,3 +83,20 @@ databaseChangeLog:
             schemaName: public
             tableName: PERSON
             unique: false
+
+  - changeSet:
+      id: 130
+      author: bart
+      dbms: PostgreSQL
+      comment: Create PERSOON USERNAME index
+      changes:
+        - createIndex:
+            clustered: false
+            columns:
+              - column:
+                  descending: true
+                  name: USERNAME
+            indexName: PERSOON_USERNAME_INDEX
+            schemaName: public
+            tableName: PERSON
+            unique: true
