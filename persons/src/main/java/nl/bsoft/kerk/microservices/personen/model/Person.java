@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Objects;
 
 @Entity
 @Table(name = "PERSON")
@@ -62,4 +63,16 @@ public class Person {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Collection<Role> roles = new ArrayList<>();
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Person person = (Person) o;
+        return voornaam.equals(person.voornaam) && Objects.equals(tussenvoegsel, person.tussenvoegsel) && achternaam.equals(person.achternaam) && Objects.equals(created, person.created) && state.equals(person.state) && username.equals(person.username) && password.equals(person.password) && Objects.equals(roles, person.roles);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(voornaam, tussenvoegsel, achternaam, created, state, username, password, roles);
+    }
 }

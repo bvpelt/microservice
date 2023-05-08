@@ -49,8 +49,32 @@ public class PersonService {
             savedRole.getPersons().add(person);
             usedRoles.add(savedRole);
         });
-        person.setRoles(usedRoles);
-        Person savedPerson = personRepository.save(person);
+
+        Person savedPerson = null;
+        Optional<Person> dbPerson = null;
+        if (person.getId() != null) {
+            dbPerson = personRepository.findById(person.getId());
+            if (dbPerson.isPresent()) {
+                if (dbPerson.get().equals(person)) {
+                    if (usedRoles.equals(person.getRoles())) {
+                        log.debug("Person equals and roles equal, no change");
+                    } else {
+                        log.debug("Person equals and roles not equal, update person and roles");
+                        person.setRoles(usedRoles);
+                        savedPerson = personRepository.save(person);
+                    }
+                } else {
+                    log.debug("Person not equals to saved person --- dbPerson: {}\nperson: {}", dbPerson, person);
+                }
+            } else { // person with id not found
+                log.debug("Person not found, add person and roles");
+                person.setRoles(usedRoles);
+                savedPerson = personRepository.save(person);
+            }
+        } else { // no id specified new person
+            person.setRoles(usedRoles);
+            savedPerson = personRepository.save(person);
+        }
 
         return savedPerson;
     }
