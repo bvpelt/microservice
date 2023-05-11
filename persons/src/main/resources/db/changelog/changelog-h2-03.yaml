@@ -1,0 +1,233 @@
+databaseChangeLog:
+  - changeSet:
+      id: 300
+      author: bart
+      dbms: H2
+      comment: Insert
+      changes:
+        - insert:
+            schemaName: PUBLIC
+            tableName: ROLE
+            columns:
+              - column:
+                  name: ID
+                  value: 1
+              - column:
+                  name: NAME
+                  value: USER
+        - insert:
+            schemaName: PUBLIC
+            tableName: ROLE
+            columns:
+              - column:
+                  name: ID
+                  value: 2
+              - column:
+                  name: NAME
+                  value: ADMIN
+        - insert:
+            schemaName: PUBLIC
+            tableName: ROLE
+            columns:
+              - column:
+                  name: ID
+                  value: 3
+              - column:
+                  name: NAME
+                  value: DATABASE
+        - insert:
+            schemaName: PUBLIC
+            tableName: ROLE
+            columns:
+              - column:
+                  name: ID
+                  value: 4
+              - column:
+                  name: NAME
+                  value: EDITOR
+
+  - changeSet:
+      id: 310
+      author: bart
+      dbms: H2
+      comment: Insert
+      changes:
+        - insert:
+            schemaName: PUBLIC
+            tableName: PERSON
+            columns:
+              - column:
+                  name: ID
+                  value: 1
+              - column:
+                  name: VOORNAAM
+                  value: JAN
+              - column:
+                  name: TUSSENVOEGSEL
+                  value: de
+              - column:
+                  name: ACHTERNAAM
+                  value: Vries
+              - column:
+                  name: CREATED
+                  value: '2023-04-01 08:00:00'
+              - column:
+                  name: STATE
+                  value: created
+              - column:
+                  name: USERNAME
+                  value: mark@gmail.com
+              - column:
+                  name: PASSWORD
+                  value: 123456
+        - insert:
+            schemaName: PUBLIC
+            tableName: PERSON
+            columns:
+              - column:
+                  name: ID
+                  value: 2
+              - column:
+                  name: VOORNAAM
+                  value: FRANS
+              - column:
+                  name: ACHTERNAAM
+                  value: CORTENBACH
+              - column:
+                  name: CREATED
+                  value: '2023-04-01 08:00:00'
+              - column:
+                  name: STATE
+                  value: created
+              - column:
+                  name: USERNAME
+                  value: frans@gmail.com
+              - column:
+                  name: PASSWORD
+                  value: 123456
+        - insert:
+            schemaName: PUBLIC
+            tableName: PERSON
+            columns:
+              - column:
+                  name: ID
+                  value: 3
+              - column:
+                  name: VOORNAAM
+                  value: ASTERIX
+              - column:
+                  name: TUSSENVOEGSEL
+                  value: van der
+              - column:
+                  name: ACHTERNAAM
+                  value: Laan
+              - column:
+                  name: CREATED
+                  value: '2023-04-01 08:00:00'
+              - column:
+                  name: STATE
+                  value: created
+              - column:
+                  name: USERNAME
+                  value: asterix@gmail.com
+              - column:
+                  name: PASSWORD
+                  value: 123456
+
+  - changeSet:
+      id: 320
+      author: bart
+      dbms: H2
+      comment: Insert
+      changes:
+        - insert:
+            schemaName: PUBLIC
+            tableName: PERSON_GRANTS
+            columns:
+              - column:
+                  name: ID
+                  value: 1
+              - column:
+                  name: PERSON_ID
+                  value: 1
+              - column:
+                  name: ROLE_ID
+                  value: 1
+        - insert:
+            schemaName: PUBLIC
+            tableName: PERSON_GRANTS
+            columns:
+              - column:
+                  name: ID
+                  value: 8
+              - column:
+                  name: PERSON_ID
+                  value: 2
+              - column:
+                  name: ROLE_ID
+                  value: 2
+        - insert:
+            schemaName: PUBLIC
+            tableName: PERSON_GRANTS
+            columns:
+              - column:
+                  name: ID
+                  value: 9
+              - column:
+                  name: PERSON_ID
+                  value: 2
+              - column:
+                  name: ROLE_ID
+                  value: 1
+        - insert:
+            schemaName: PUBLIC
+            tableName: PERSON_GRANTS
+            columns:
+              - column:
+                  name: ID
+                  value: 33
+              - column:
+                  name: PERSON_ID
+                  value: 3
+              - column:
+                  name: ROLE_ID
+                  value: 2
+        - insert:
+            schemaName: PUBLIC
+            tableName: PERSON_GRANTS
+            columns:
+              - column:
+                  name: ID
+                  value: 34
+              - column:
+                  name: PERSON_ID
+                  value: 3
+              - column:
+                  name: ROLE_ID
+                  value: 3
+        - insert:
+            schemaName: PUBLIC
+            tableName: PERSON_GRANTS
+            columns:
+              - column:
+                  name: ID
+                  value: 35
+              - column:
+                  name: PERSON_ID
+                  value: 3
+              - column:
+                  name: ROLE_ID
+                  value: 4
+        - insert:
+            schemaName: PUBLIC
+            tableName: PERSON_GRANTS
+            columns:
+              - column:
+                  name: ID
+                  value: 36
+              - column:
+                  name: PERSON_ID
+                  value: 3
+              - column:
+                  name: ROLE_ID
+                  value: 1

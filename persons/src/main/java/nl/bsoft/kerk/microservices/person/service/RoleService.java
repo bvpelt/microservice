@@ -1,16 +1,12 @@
-package nl.bsoft.kerk.microservices.personen.service;
+package nl.bsoft.kerk.microservices.person.service;
 
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import nl.bsoft.kerk.microservices.personen.model.Person;
-import nl.bsoft.kerk.microservices.personen.model.Role;
-import nl.bsoft.kerk.microservices.personen.repository.PersonRepository;
-import nl.bsoft.kerk.microservices.personen.repository.RoleRepository;
+import nl.bsoft.kerk.microservices.person.model.Role;
+import nl.bsoft.kerk.microservices.person.repository.RoleRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,6 +20,7 @@ public class RoleService {
     public List<Role> getRoles() {
         return roleRepository.findAll();
     }
+
     public Optional<Role> getRoleById(Long id) {
         return roleRepository.findById(id);
     }

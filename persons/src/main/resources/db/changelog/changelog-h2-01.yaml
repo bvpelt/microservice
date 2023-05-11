@@ -1,0 +1,102 @@
+databaseChangeLog:
+  - changeSet:
+      id: 100
+      author: bart
+      dbms: H2
+      comment: Create CONCEPTSCHEMA
+      changes:
+        - createTable:
+            schemaName: PUBLIC
+            tableName: PERSON
+            columns:
+              - column:
+                  name: ID
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: VOORNAAM
+                  type: varchar(12)
+              - column:
+                  name: TUSSENVOEGSEL
+                  type: varchar(12)
+              - column:
+                  name: ACHTERNAAM
+                  type: varchar(64)
+              - column:
+                  name: CREATED
+                  type: timestamp
+              - column:
+                  name: STATE
+                  type: varchar(12)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: USERNAME
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: PASSWORD
+                  type: varchar(64)
+                  constraints:
+                    nullable: false
+        - rollback:
+            dropTable:
+              - tableName: PERSON
+
+  - changeSet:
+      id: 110
+      author: bart
+      dbms: H2
+      comment: Create PERSOON VOORNAAM index
+      changes:
+        - createIndex:
+            clustered: true
+            columns:
+              - column:
+                  descending: true
+                  name: VOORNAAM
+            indexName: PERSOON_VOORNAAM_INDEX
+            schemaName: public
+            tableName: PERSON
+            unique: false
+
+  - changeSet:
+      id: 120
+      author: bart
+      dbms: H2
+      comment: Create PERSOON ACHTERNAAM TUSSENVOEGSEL index
+      changes:
+        - createIndex:
+            clustered: true
+            columns:
+              - column:
+                  descending: true
+                  name: ACHTERNAAM
+              - column:
+                  descending: true
+                  name: TUSSENVOEGSEL
+            indexName: PERSOON_ACHTERNAAM_TUSSENVOEGSEL_INDEX
+            schemaName: public
+            tableName: PERSON
+            unique: false
+
+  - changeSet:
+      id: 130
+      author: bart
+      dbms: H2
+      comment: Create PERSOON USERNAME index
+      changes:
+        - createIndex:
+            clustered: false
+            columns:
+              - column:
+                  descending: true
+                  name: USERNAME
+            indexName: PERSOON_USERNAME_INDEX
+            schemaName: public
+            tableName: PERSON
+            unique: true

@@ -1,4 +1,4 @@
-package nl.bsoft.kerk.microservices.personen.model;
+package nl.bsoft.kerk.microservices.person.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;

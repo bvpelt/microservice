@@ -1,4 +1,4 @@
-package nl.bsoft.kerk.microservices.personen.config;
+package nl.bsoft.kerk.microservices.person.config;
 
 
 import org.springframework.context.annotation.Bean;

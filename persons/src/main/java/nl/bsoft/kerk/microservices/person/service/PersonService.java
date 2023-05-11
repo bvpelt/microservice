@@ -1,12 +1,12 @@
-package nl.bsoft.kerk.microservices.personen.service;
+package nl.bsoft.kerk.microservices.person.service;
 
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import nl.bsoft.kerk.microservices.personen.model.Person;
-import nl.bsoft.kerk.microservices.personen.model.Role;
-import nl.bsoft.kerk.microservices.personen.repository.PersonRepository;
-import nl.bsoft.kerk.microservices.personen.repository.RoleRepository;
+import nl.bsoft.kerk.microservices.person.model.Person;
+import nl.bsoft.kerk.microservices.person.model.Role;
+import nl.bsoft.kerk.microservices.person.repository.PersonRepository;
+import nl.bsoft.kerk.microservices.person.repository.RoleRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -63,19 +63,16 @@ public class PersonService {
                         person.setRoles(usedRoles);
                         savedPerson = personRepository.save(person);
                     }
-                } else {
-                    log.debug("Person not equals to saved person --- dbPerson: {}\nperson: {}", dbPerson, person);
+                } else { // person with id not found
+                    log.debug("Person not found, add person and roles");
+                    person.setRoles(usedRoles);
+                    savedPerson = personRepository.save(person);
                 }
-            } else { // person with id not found
-                log.debug("Person not found, add person and roles");
+            } else { // no id specified new person
                 person.setRoles(usedRoles);
                 savedPerson = personRepository.save(person);
             }
-        } else { // no id specified new person
-            person.setRoles(usedRoles);
-            savedPerson = personRepository.save(person);
         }
-
         return savedPerson;
     }
 

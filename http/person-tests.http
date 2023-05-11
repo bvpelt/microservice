@@ -1,9 +1,9 @@
-GET http://localhost:8090/api/persons/v1/person
+GET http://localhost:8080/api/persons/v1/person
 Accept: application/json
 
 ###
 
-POST http://localhost:8090/api/persons/v1/person
+POST http://localhost:8080/api/persons/v1/person
 Content-Type: application/json
 
 {
@@ -24,7 +24,7 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:8090/api/persons/v1/person
+POST http://localhost:8080/api/persons/v1/person
 Content-Type: application/json
 
 {
@@ -48,7 +48,7 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:8090/api/persons/v1/person
+POST http://localhost:8080/api/persons/v1/person
 Content-Type: application/json
 
 {
@@ -78,37 +78,69 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8090/api/persons/v1/person
+POST http://localhost:8080/api/persons/v1/person
+Content-Type: application/json
+
+{
+  "id": 3,
+  "voornaam": "Asterix",
+  "tussenvoegsel": "van der",
+  "achternaam": "Laan",
+  "created": "2023-05-01T08:00",
+  "state": "created",
+  "username": "asterix@gmail.com",
+  "password": "123456",
+  "roles": [
+    {
+      "name": "ADMIN"
+    },
+    {
+      "name": "DATABASE"
+    },
+    {
+      "name": "EDITOR"
+    }
+  ]
+}
+
+###
+
+GET http://localhost:8080/api/persons/v1/person
 Accept: application/json
 
 ###
 
-GET http://localhost:8090/api/persons/v1/person/1
+GET http://localhost:8080/api/persons/v1/person/1
 Accept: application/json
 
 ###
 
 
-GET http://localhost:8090/api/persons/v1/person/2
+GET http://localhost:8080/api/persons/v1/person/2
 Accept: application/json
 
 ###
 
-DELETE http://localhost:8090/api/persons/v1/person/1
+DELETE http://localhost:8080/api/persons/v1/person/1
 
 ###
 
-DELETE http://localhost:8090/api/persons/v1/person/2
+DELETE http://localhost:8080/api/persons/v1/person/2
 
 ###
 
 
-GET http://localhost:8090/api/persons/v1/role
+DELETE http://localhost:8080/api/persons/v1/person/3
+
+###
+
+
+GET http://localhost:8080/api/persons/v1/role
 Accept: application/json
 
 ###
 
-GET http://localhost:8090/api/persons/v1/role/1
+GET http://localhost:8080/api/persons/v1/role/1
 Accept: application/json
 
 ###

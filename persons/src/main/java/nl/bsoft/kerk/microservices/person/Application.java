@@ -1,4 +1,4 @@
-package nl.bsoft.kerk.microservices.personen;
+package nl.bsoft.kerk.microservices.person;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

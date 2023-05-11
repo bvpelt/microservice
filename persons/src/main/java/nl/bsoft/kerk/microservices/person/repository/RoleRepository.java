@@ -1,6 +1,6 @@
-package nl.bsoft.kerk.microservices.personen.repository;
+package nl.bsoft.kerk.microservices.person.repository;
 
-import nl.bsoft.kerk.microservices.personen.model.Role;
+import nl.bsoft.kerk.microservices.person.model.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

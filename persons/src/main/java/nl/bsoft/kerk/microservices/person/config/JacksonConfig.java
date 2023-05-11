@@ -1,4 +1,4 @@
-package nl.bsoft.kerk.microservices.personen.config;
+package nl.bsoft.kerk.microservices.person.config;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;

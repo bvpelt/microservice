@@ -1,10 +1,10 @@
-package nl.bsoft.kerk.microservices.personen.controller;
+package nl.bsoft.kerk.microservices.person.controller;
 
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import nl.bsoft.kerk.microservices.personen.model.Person;
-import nl.bsoft.kerk.microservices.personen.service.PersonService;
+import nl.bsoft.kerk.microservices.person.model.Person;
+import nl.bsoft.kerk.microservices.person.service.PersonService;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;

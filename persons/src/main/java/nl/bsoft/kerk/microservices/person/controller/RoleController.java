@@ -1,15 +1,15 @@
-package nl.bsoft.kerk.microservices.personen.controller;
+package nl.bsoft.kerk.microservices.person.controller;
 
 import jakarta.transaction.Transactional;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import nl.bsoft.kerk.microservices.personen.model.Person;
-import nl.bsoft.kerk.microservices.personen.model.Role;
-import nl.bsoft.kerk.microservices.personen.service.PersonService;
-import nl.bsoft.kerk.microservices.personen.service.RoleService;
-import org.springframework.web.bind.annotation.*;
+import nl.bsoft.kerk.microservices.person.model.Role;
+import nl.bsoft.kerk.microservices.person.service.RoleService;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 

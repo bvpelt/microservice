@@ -1,4 +1,4 @@
-package nl.bsoft.kerk.microservices.personen.model;
+package nl.bsoft.kerk.microservices.person.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -63,12 +63,24 @@ public class Person {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Collection<Role> roles = new ArrayList<>();
 
+
+    private boolean sameRoles(Collection<Role> lhs, Collection<Role> rhs) {
+        boolean equals = false;
+        if (lhs != null && rhs != null) {
+            equals = lhs.size() == rhs.size() && lhs.containsAll(rhs) && rhs.containsAll(lhs);
+        } else if (lhs == null && rhs == null) {
+            equals = true;
+        }
+        return equals;
+    }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
-        return voornaam.equals(person.voornaam) && Objects.equals(tussenvoegsel, person.tussenvoegsel) && achternaam.equals(person.achternaam) && Objects.equals(created, person.created) && state.equals(person.state) && username.equals(person.username) && password.equals(person.password) && Objects.equals(roles, person.roles);
+        return voornaam.equals(person.voornaam) && Objects.equals(tussenvoegsel, person.tussenvoegsel) && achternaam.equals(person.achternaam) && Objects.equals(created, person.created) && state.equals(person.state) && username.equals(person.username) && password.equals(person.password) && sameRoles(roles, person.roles);
     }
 
     @Override

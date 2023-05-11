@@ -1,0 +1,108 @@
+databaseChangeLog:
+  - changeSet:
+      id: 200
+      author: bart
+      dbms: H2
+      comment: Create CONCEPTSCHEMA
+      changes:
+        - createTable:
+            schemaName: PUBLIC
+            tableName: ROLE
+            columns:
+              - column:
+                  name: ID
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: NAME
+                  type: varchar(24)
+              - column:
+                  name: DESCRIPTION
+                  type: text
+        - rollback:
+            dropTable:
+              - tableName: ROLE
+
+  - changeSet:
+      id: 210
+      author: bart
+      dbms: H2
+      comment: Create PERSOON VOORNAAM index
+      changes:
+        - createIndex:
+            clustered: true
+            columns:
+              - column:
+                  descending: true
+                  name: NAME
+            indexName: ROLE_NAME_INDEX
+            schemaName: public
+            tableName: ROLE
+            unique: true
+
+  - changeSet:
+      id: 220
+      author: bart
+      dbms: H2
+      comment: Create CONCEPTSCHEMA
+      changes:
+        - createTable:
+            schemaName: PUBLIC
+            tableName: PERSON_GRANTS
+            columns:
+              - column:
+                  name: ID
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: PERSON_ID
+                  type: BIGINT
+              - column:
+                  name: ROLE_ID
+                  type: BIGINT
+        - rollback:
+            dropTable:
+              - tableName: PERSON_GRANTS
+
+  - changeSet:
+      id: 230
+      author: bart
+      dbms: H2
+      comment: Create PERSOON COURSE index
+      changes:
+        - createIndex:
+            clustered: true
+            columns:
+              - column:
+                  descending: true
+                  name: PERSON_ID
+              - column:
+                  descending: true
+                  name: ROLE_ID
+            indexName: PERSON_ROLE_INDEX
+            schemaName: public
+            tableName: PERSON_GRANTS
+            unique: true
+
+  - changeSet:
+      id: 240
+      author: bart
+      dbms: H2
+      comment: Create COURSE index
+      changes:
+        - createIndex:
+            clustered: true
+            columns:
+              - column:
+                  descending: true
+                  name: ROLE_ID
+            indexName: ROLE_INDEX
+            schemaName: public
+            tableName: PERSON_GRANTS
+            unique: false
