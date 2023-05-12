@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import nl.bsoft.kerk.microservices.person.model.Person;
 import nl.bsoft.kerk.microservices.person.service.PersonService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
@@ -20,35 +22,37 @@ public class PersonController {
     private PersonService personService;
 
     @GetMapping("/person")
-    List<Person> getPersons() {
+    public ResponseEntity<List<Person>> getPersons() {
         List<Person> items = personService.getPersons();
 
-        return items;
+        return ResponseEntity.status(HttpStatus.OK).body(items);
     }
 
     @GetMapping("/person/{id}")
-    Person getPersonById(@PathVariable Long id) {
+    public ResponseEntity<Person> getPersonById(@PathVariable Long id) {
         Optional<Person> item = personService.getPersonById(id);
 
         Person result = null;
         if (item.isPresent()) {
             result = item.get();
+            return ResponseEntity.status(HttpStatus.OK).body(result);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
         }
-
-        return result;
     }
 
     @PostMapping("/person")
-    public Person addPerson(@RequestBody Person person) {
-        log.info("New item: {}", person);
+    public ResponseEntity<Person> addPerson(@RequestBody Person person) {
+        log.info("New person: {}", person);
         if (person.getCreated() == null) {
             person.setCreated(LocalDateTime.now());
         }
         Person result = personService.addPerson(person);
-        log.info("Added item: {}", result);
-        return result;
+        log.info("Added person: {}", result);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
+    @ResponseStatus(code = HttpStatus.NO_CONTENT, reason = "DELETED")
     @DeleteMapping("/person/{id}")
     public void deletePerson(@PathVariable Long id) {
         personService.deletePerson(id);

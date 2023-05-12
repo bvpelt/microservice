@@ -48,6 +48,7 @@ build:
   description: '@project.description@'
   timestamp: '@timestamp@'
 server:
+  port: 8080
   servlet:
     context-path: /api/persons/v1
   error:
@@ -79,7 +80,7 @@ management:
     env:
       enabled: true
   server:
-    port: '8091'
+    port: 8081
   endpoint:
     health:
       show-details: always

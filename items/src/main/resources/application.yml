@@ -50,6 +50,7 @@ build:
   timestamp: '@timestamp@'
 
 server:
+  port: 8080
   servlet:
     context-path: /api/items/v1
   error:
@@ -81,7 +82,7 @@ management:
     env:
       enabled: true
   server:
-    port: '8081'
+    port: 8081
   endpoint:
     health:
       show-details: always

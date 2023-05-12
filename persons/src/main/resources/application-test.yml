@@ -2,7 +2,9 @@ spring:
   datasource:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:testdb;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE
-
+  h2:
+    console:
+      enabled: true
 
   liquibase:
     change-log: classpath:/db/changelog/changelog-h2-master.yaml
@@ -15,3 +17,6 @@ spring:
         order_updates: true
         batch_versioned_data: true
         dialect: org.hibernate.dialect.H2Dialect
+
+server:
+  port: 8090

@@ -25,7 +25,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @Slf4j
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+//@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest()
 @AutoConfigureMockMvc
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @ActiveProfiles("test")
@@ -47,6 +48,7 @@ public class PersonControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.[*]id").exists())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.[*]id").isNotEmpty())
+                .andExpect(MockMvcResultMatchers.jsonPath("$[0].id").value(1))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].voornaam").value("JAN"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].tussenvoegsel").value("de"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].achternaam").value("Vries"))
@@ -57,6 +59,7 @@ public class PersonControllerTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].roles[0].id").value("1"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].roles[0].name").value("USER"))
 
+                .andExpect(MockMvcResultMatchers.jsonPath("$[1].id").value(2))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[1].voornaam").value("FRANS"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[1].tussenvoegsel").doesNotExist())
                 .andExpect(MockMvcResultMatchers.jsonPath("$[1].achternaam").value("CORTENBACH"))
@@ -69,6 +72,7 @@ public class PersonControllerTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$[1].roles[1].id").value("1"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[1].roles[1].name").value("USER"))
 
+                .andExpect(MockMvcResultMatchers.jsonPath("$[2].id").value(3))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[2].voornaam").value("ASTERIX"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[2].tussenvoegsel").value("van der"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[2].achternaam").value("Laan"))
@@ -116,7 +120,7 @@ public class PersonControllerTest {
                         .get("/person/{id}", 5)
                         .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
-                .andExpect(status().isOk())
+                .andExpect(status().isNotFound())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.id").doesNotExist())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.id").doesNotExist())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.voornaam").doesNotExist())
@@ -137,6 +141,7 @@ public class PersonControllerTest {
 
         // Create a Person object to add
         Person person = new Person();
+        person.setId(4L);
         person.setVoornaam("Peter");
         person.setTussenvoegsel("van de");
         person.setAchternaam("Riet");
