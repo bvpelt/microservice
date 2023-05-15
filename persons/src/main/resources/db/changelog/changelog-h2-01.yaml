@@ -27,7 +27,7 @@ databaseChangeLog:
                   type: varchar(64)
               - column:
                   name: CREATED
-                  type: timestamp
+                  type: timestamp with timezone
               - column:
                   name: STATE
                   type: varchar(12)

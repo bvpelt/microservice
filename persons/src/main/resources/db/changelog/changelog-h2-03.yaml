@@ -76,7 +76,7 @@ databaseChangeLog:
                   value: created
               - column:
                   name: USERNAME
-                  value: mark@gmail.com
+                  value: jan@gmail.com
               - column:
                   name: PASSWORD
                   value: 123456
@@ -95,7 +95,7 @@ databaseChangeLog:
                   value: CORTENBACH
               - column:
                   name: CREATED
-                  value: '2023-04-01 08:00:00'
+                  value: '2023-04-02 08:00:00'
               - column:
                   name: STATE
                   value: created

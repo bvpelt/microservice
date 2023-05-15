@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Objects;
@@ -39,7 +40,7 @@ public class Person {
     private String achternaam;
 
     @Column(name = "CREATED")
-    private LocalDateTime created;
+    private OffsetDateTime created;
 
     @NotNull
     @Column(name = "STATE")

@@ -3,6 +3,8 @@ package nl.bsoft.kerk.microservices.person.config;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.util.StdDateFormat;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.fasterxml.jackson.datatype.jsr310.deser.InstantDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.deser.key.OffsetDateTimeKeyDeserializer;
@@ -16,24 +18,28 @@ import java.time.OffsetDateTime;
 
 @Configuration
 public class JacksonConfig {
+
     public static ObjectMapper getObjectMapper() {
         return new JacksonConfig().objectMapper();
     }
+
 
     @Bean
     @Primary
     public ObjectMapper objectMapper() {
 
-
         ObjectMapper mapper = new ObjectMapper();
+
         mapper.registerModule(getTimeModule());
         mapper.enable(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT);
         mapper.enable(DeserializationFeature.ACCEPT_EMPTY_ARRAY_AS_NULL_OBJECT);
         mapper.configure(DeserializationFeature.FAIL_ON_NULL_CREATOR_PROPERTIES, false);
 
+        mapper.setDateFormat(new StdDateFormat());
         //mapper.setDateFormat(new StdDateFormat());
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
-        mapper.setDateFormat(sdf);
+        //SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS XXX");
+        //mapper.setDateFormat(sdf);
+        mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
 
         mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
         mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
@@ -48,4 +54,5 @@ public class JacksonConfig {
         javaTimeModule.addKeyDeserializer(OffsetDateTime.class, OffsetDateTimeKeyDeserializer.INSTANCE);
         return javaTimeModule;
     }
+
 }
