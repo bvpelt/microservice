@@ -52,15 +52,18 @@
             <scope>test</scope>
         </dependency>
 
+        <!--
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <version>1.4.200</version>
             <scope>test</scope>
         </dependency>
+        -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>
@@ -69,12 +72,15 @@
         <pluginManagement>
             <plugins>
                 <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
+                    <!--
                     <configuration>
                         <usedDependencies>
                             <dependency>org.springdoc:springdoc-openapi-starter-webmvc-ui</dependency>
                         </usedDependencies>
                     </configuration>
+                    -->
                     <executions>
                         <execution>
                             <phase>install</phase>

@@ -84,8 +84,7 @@ public class PersonControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(personJson))
                 .andExpect(status().isOk())
-                .andReturn()
-                ;
+                .andReturn();
         log.info("MvcResult: {}", result);
 
         String responseAsString = result.getResponse().getContentAsString();
@@ -153,8 +152,7 @@ public class PersonControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(personJson))
                 .andExpect(status().isOk())
-                .andReturn()
-                ;
+                .andReturn();
         log.info("MvcResult: {}", result);
 
         String responseAsString = result.getResponse().getContentAsString();
@@ -228,8 +226,7 @@ public class PersonControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(personJson))
                 .andExpect(status().isOk())
-                .andReturn()
-                ;
+                .andReturn();
         log.info("MvcResult: {}", result);
 
         String responseAsString = result.getResponse().getContentAsString();
@@ -271,8 +268,8 @@ public class PersonControllerTest {
                         .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.[*]id").exists())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.[*]id").isNotEmpty())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.[*].id").exists())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.[*].id").isNotEmpty())
 
 
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].id").value(1))
@@ -307,12 +304,12 @@ public class PersonControllerTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$[2].state").value("created"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[2].username").value("asterix@gmail.com"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[2].password").value("123456"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[2].roles[0].id").value("4"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[2].roles[0].name").value("EDITOR"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[2].roles[0].id").value("2"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[2].roles[0].name").value("ADMIN"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[2].roles[1].id").value("3"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[2].roles[1].name").value("DATABASE"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[2].roles[2].id").value("2"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[2].roles[2].name").value("ADMIN"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[2].roles[2].id").value("4"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$[2].roles[2].name").value("EDITOR"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[2].roles[3].id").value("1"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[2].roles[3].name").value("USER"))
         ;

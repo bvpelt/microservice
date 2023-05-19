@@ -51,6 +51,23 @@ databaseChangeLog:
       id: 110
       author: bart
       dbms: PostgreSQL
+      comment: Default sequence
+      changes:
+        - createSequence:
+            cacheSize: 1
+            cycle: no
+            dataType: bitint
+            incrementBy: 1
+            maxValue: 9223372036854775807
+            minValue: 1
+            schemaName: public
+            sequenceName: person_id_seq
+            startValue: 1
+
+  - changeSet:
+      id: 120
+      author: bart
+      dbms: PostgreSQL
       comment: Create PERSOON VOORNAAM index
       changes:
         - createIndex:
@@ -65,7 +82,7 @@ databaseChangeLog:
             unique: false
 
   - changeSet:
-      id: 120
+      id: 130
       author: bart
       dbms: PostgreSQL
       comment: Create PERSOON ACHTERNAAM TUSSENVOEGSEL index
@@ -85,7 +102,7 @@ databaseChangeLog:
             unique: false
 
   - changeSet:
-      id: 130
+      id: 140
       author: bart
       dbms: PostgreSQL
       comment: Create PERSOON USERNAME index

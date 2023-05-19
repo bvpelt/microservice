@@ -30,6 +30,23 @@ databaseChangeLog:
       id: 210
       author: bart
       dbms: PostgreSQL
+      comment: Default sequence
+      changes:
+        - createSequence:
+            cacheSize: 1
+            cycle: no
+            dataType: bitint
+            incrementBy: 1
+            maxValue: 9223372036854775807
+            minValue: 1
+            schemaName: public
+            sequenceName: role_id_seq
+            startValue: 1
+
+  - changeSet:
+      id: 220
+      author: bart
+      dbms: PostgreSQL
       comment: Create PERSOON VOORNAAM index
       changes:
         - createIndex:
@@ -44,7 +61,7 @@ databaseChangeLog:
             unique: true
 
   - changeSet:
-      id: 220
+      id: 230
       author: bart
       dbms: PostgreSQL
       comment: Create CONCEPTSCHEMA
@@ -71,7 +88,7 @@ databaseChangeLog:
               - tableName: PERSON_GRANTS
 
   - changeSet:
-      id: 230
+      id: 240
       author: bart
       dbms: PostgreSQL
       comment: Create PERSOON COURSE index
@@ -91,7 +108,7 @@ databaseChangeLog:
             unique: true
 
   - changeSet:
-      id: 240
+      id: 250
       author: bart
       dbms: PostgreSQL
       comment: Create COURSE index
