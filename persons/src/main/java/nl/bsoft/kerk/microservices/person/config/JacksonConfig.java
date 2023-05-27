@@ -22,7 +22,6 @@ public class JacksonConfig {
         return new JacksonConfig().objectMapper();
     }
 
-
     @Bean
     @Primary
     public ObjectMapper objectMapper() {
@@ -35,9 +34,6 @@ public class JacksonConfig {
         mapper.configure(DeserializationFeature.FAIL_ON_NULL_CREATOR_PROPERTIES, false);
 
         mapper.setDateFormat(new StdDateFormat());
-        //mapper.setDateFormat(new StdDateFormat());
-        //SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS XXX");
-        //mapper.setDateFormat(sdf);
         mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
 
         mapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);

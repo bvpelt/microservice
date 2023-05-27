@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.Objects;
 
 @Entity
@@ -41,7 +42,7 @@ public class Item implements Serializable {
     If not present, the current date-time of moment data is presented is used
      */
     @Column(name = "PUBLISHED")
-    private LocalDateTime published;
+    private ZonedDateTime published;
 
     @NotNull
     @Column(name = "CONTENT")

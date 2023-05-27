@@ -27,7 +27,7 @@ databaseChangeLog:
                   type: varchar(64)
               - column:
                   name: CREATED
-                  type: timestamp
+                  type: timestamp with timezone
               - column:
                   name: STATE
                   type: varchar(12)
@@ -56,7 +56,7 @@ databaseChangeLog:
         - createSequence:
             cacheSize: 1
             cycle: no
-            dataType: bitint
+            dataType: bigint
             incrementBy: 1
             maxValue: 9223372036854775807
             minValue: 1

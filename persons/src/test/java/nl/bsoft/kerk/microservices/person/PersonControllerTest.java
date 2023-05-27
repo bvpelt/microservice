@@ -2,6 +2,7 @@ package nl.bsoft.kerk.microservices.person;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
+import nl.bsoft.kerk.microservices.library.model.TimeUtil;
 import nl.bsoft.kerk.microservices.person.model.Person;
 import nl.bsoft.kerk.microservices.person.model.Role;
 import org.junit.jupiter.api.MethodOrderer;
@@ -18,10 +19,7 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
-import java.time.LocalDateTime;
-import java.time.OffsetDateTime;
-import java.time.ZoneId;
-import java.time.ZoneOffset;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
@@ -31,7 +29,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @Slf4j
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-//@SpringBootTest()
 @AutoConfigureMockMvc
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @ActiveProfiles("test")
@@ -42,15 +39,6 @@ public class PersonControllerTest {
 
     @Autowired
     private ObjectMapper objectMapper;
-
-    private OffsetDateTime getDateTime(String date) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS");
-        LocalDateTime dateTime = LocalDateTime.parse(date, formatter);
-        ZoneId zoneId = ZoneId.of("UTC");
-        ZoneOffset offset = zoneId.getRules().getOffset(dateTime);
-
-        return OffsetDateTime.of(dateTime, offset);
-    }
 
     @Test
     @Order(1)
@@ -63,7 +51,8 @@ public class PersonControllerTest {
         person.setTussenvoegsel("de");
         person.setAchternaam("Vries");
 
-        person.setCreated(getDateTime("2023-04-01T08:00:00.000"));
+
+        person.setCreated(TimeUtil.getDateTime("2023-04-01T08:00:00.000+02:00"));
         person.setState("created");
         person.setUsername("jan@gmail.com");
         person.setPassword("123456");
@@ -128,7 +117,7 @@ public class PersonControllerTest {
         person.setVoornaam("FRANS");
         person.setAchternaam("CORTENBACH");
 
-        person.setCreated(getDateTime("2023-04-02T08:00:00.000"));
+        person.setCreated(TimeUtil.getDateTime("2023-04-02T08:00:00.00+02:00"));
         person.setState("created");
         person.setUsername("frans@gmail.com");
         person.setPassword("123456");
@@ -196,7 +185,7 @@ public class PersonControllerTest {
         person.setTussenvoegsel("van der");
         person.setAchternaam("Laan");
 
-        person.setCreated(getDateTime("2023-04-03T08:00:00.000"));
+        person.setCreated(TimeUtil.getDateTime("2023-04-03T08:00:00+02:00"));
         person.setState("created");
         person.setUsername("asterix@gmail.com");
         person.setPassword("123456");

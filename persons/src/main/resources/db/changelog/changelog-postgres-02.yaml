@@ -35,7 +35,7 @@ databaseChangeLog:
         - createSequence:
             cacheSize: 1
             cycle: no
-            dataType: bitint
+            dataType: bigint
             incrementBy: 1
             maxValue: 9223372036854775807
             minValue: 1

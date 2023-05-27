@@ -1,5 +1,6 @@
 package nl.bsoft.kerk.microservices.person.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -8,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.OffsetDateTime;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Objects;
@@ -38,8 +40,9 @@ public class Person {
     @Size(min = 1, max = 64)
     private String achternaam;
 
+    //@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss[.SSSZ][.SSZ][.SZ]")
     @Column(name = "CREATED")
-    private OffsetDateTime created;
+    private ZonedDateTime created;
 
     @NotNull
     @Column(name = "STATE")

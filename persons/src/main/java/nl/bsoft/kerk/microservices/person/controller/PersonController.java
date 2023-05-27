@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.OffsetDateTime;
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -45,7 +46,7 @@ public class PersonController {
     public ResponseEntity<Person> addPerson(@RequestBody Person person) {
         log.info("New person: {}", person);
         if (person.getCreated() == null) {
-            person.setCreated(OffsetDateTime.now());
+            person.setCreated(ZonedDateTime.now());
         }
         Person result = personService.addPerson(person);
         log.info("Added person: {}", result);

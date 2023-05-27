@@ -27,7 +27,7 @@ databaseChangeLog:
                   type: varchar(64)
               - column:
                   name: PUBLISHED
-                  type: timestamp
+                  type: timestamp with timezone
               - column:
                   name: CONTENT
                   type: text
