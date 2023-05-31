@@ -1,0 +1,31 @@
+server:
+  port: 8100
+
+management:
+  server:
+    port: 8181
+
+logging:
+  level:
+    web: INFO
+    root: INFO
+    org:
+      geotools:
+        styling: ERROR
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+      springframework:
+        boot:
+          autoconfigure: WARN
+    nl:
+      bsoft:
+        kerk: DEBUG
+  file:
+    name: 'logs/${spring.application.name}.log'
+
+client:
+  items-api: http://localhost:8080/api/items/v1

@@ -1,4 +1,4 @@
-package nl.bsoft.kerk.microservices.items.config;
+package nl.bsoft.kerk.microservices.bboard.config;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -17,6 +17,7 @@ import java.time.OffsetDateTime;
 
 @Configuration
 public class JacksonConfig {
+
     public static ObjectMapper getObjectMapper() {
         return new JacksonConfig().objectMapper();
     }

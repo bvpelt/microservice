@@ -86,7 +86,6 @@ public class ItemControllerTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.title").value(item.getTitle()))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.author").value(item.getAuthor()))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.content").value(item.getContent()))
-
         ;
     }
 
@@ -141,32 +140,54 @@ public class ItemControllerTest {
                 .andExpect(MockMvcResultMatchers.jsonPath("$.title").value(item.getTitle()))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.author").value(item.getAuthor()))
                 .andExpect(MockMvcResultMatchers.jsonPath("$.content").value(item.getContent()))
-
         ;
     }
 
     @Test
     @Order(3)
+    public void getItemByIdAPI() throws Exception {
+        Long itemId = 1L;
+
+        mvc.perform(MockMvcRequestBuilders
+                        .get("/item/{id}", itemId)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andDo(print())
+                .andExpect(status().isOk())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.id").exists())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.id").isNotEmpty())
+
+                .andExpect(MockMvcResultMatchers.jsonPath("$.id").value(Long.toString(1)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.category").value("Nieuws"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.title").value("Test title - nieuws"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.author").value("Mark"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content").value("Dit is de inhoud van het test item nieuws"))
+
+        ;
+    }
+
+
+    @Test
+    @Order(4)
     public void getItemAPI() throws Exception {
         mvc.perform(MockMvcRequestBuilders
                         .get("/item")
                         .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.[*].id").exists())
-                .andExpect(MockMvcResultMatchers.jsonPath("$.[*].id").isNotEmpty())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content.[*].id").exists())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content.[*].id").isNotEmpty())
 
-                .andExpect(MockMvcResultMatchers.jsonPath("$[0].id").value(Long.toString(1)))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[0].category").value("Nieuws"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[0].title").value("Test title - nieuws"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[0].author").value("Mark"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[0].content").value("Dit is de inhoud van het test item nieuws"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content.[0].id").value(Long.toString(1)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content.[0].category").value("Nieuws"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content.[0].title").value("Test title - nieuws"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content.[0].author").value("Mark"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content.[0].content").value("Dit is de inhoud van het test item nieuws"))
 
-                .andExpect(MockMvcResultMatchers.jsonPath("$[1].id").value(Long.toString(2)))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[1].category").value("Economie"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[1].title").value("Test title - economie"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[1].author").value("Martijn"))
-                .andExpect(MockMvcResultMatchers.jsonPath("$[1].content").value("Dit is de inhoud van het test item over economie"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content.[1].id").value(Long.toString(2)))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content.[1].category").value("Economie"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content.[1].title").value("Test title - economie"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content.[1].author").value("Martijn"))
+                .andExpect(MockMvcResultMatchers.jsonPath("$.content.[1].content").value("Dit is de inhoud van het test item over economie"))
         ;
     }
 

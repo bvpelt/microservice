@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>nl.bsoft.kerk</groupId>
@@ -8,17 +8,30 @@
         <version>0.1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>items</artifactId>
-    <name>items</name>
+    <artifactId>bboard</artifactId>
+
+    <name>bboard</name>
+    <description>bboard</description>
+
 
     <dependencies>
-
         <dependency>
             <groupId>nl.bsoft.kerk</groupId>
             <artifactId>library</artifactId>
             <version>0.1.0-SNAPSHOT</version>
         </dependency>
 
+        <dependency>
+            <groupId>nl.bsoft.kerk</groupId>
+            <artifactId>items</artifactId>
+            <version>0.1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>nl.bsoft.kerk</groupId>
+            <artifactId>personen</artifactId>
+            <version>0.1.0-SNAPSHOT</version>
+        </dependency>
         <!-- Spring -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -40,12 +53,27 @@
             <artifactId>gson</artifactId>
             <version>2.10.1</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>21.0.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>6.0.8</version>
+            <scope>test</scope>
+        </dependency>
 
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
         </dependency>
 
     </dependencies>
@@ -54,12 +82,8 @@
         <pluginManagement>
             <plugins>
                 <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
-                    <configuration>
-                        <usedDependencies>
-                            <dependency>org.springdoc:springdoc-openapi-starter-webmvc-ui</dependency>
-                        </usedDependencies>
-                    </configuration>
                     <executions>
                         <execution>
                             <phase>install</phase>
@@ -89,19 +113,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <!--
-            <plugin>
-                <groupId>org.flywaydb</groupId>
-                <artifactId>flyway-maven-plugin</artifactId>
-                <version>${flywaydb.version}</version>
-                <configuration>
-                    <url>jdbc:postgresql://localhost:5433/items</url>
-                    <user>testuser</user>
-                    <password>12345</password>
-                </configuration>
-            </plugin>
-            -->
         </plugins>
-
     </build>
+
 </project>

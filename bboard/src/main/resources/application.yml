@@ -1,0 +1,79 @@
+spring:
+    application:
+        name: '@project.name@'
+    #  main:
+    #    banner-mode: 'off'
+    data:
+        rest:
+            default-media-type: application/hal+json
+
+    liquibase:
+        change-log: classpath:/db/changelog/changelog-postgres-master.yaml
+        enabled: false
+
+build:
+    version: '@project.version@'
+    description: '@project.description@'
+    timestamp: '@timestamp@'
+
+
+server:
+    port: 8080
+    servlet:
+        context-path: /api/bboard/v1
+    error:
+        include-message: always
+        include-binding-errors: always
+    types:
+        print:
+            banner: false
+
+logging:
+    level:
+        #org.hibernate.orm.jdbc.bind: trace
+        web: INFO
+        root: INFO
+        org:
+            geotools:
+                styling: ERROR
+            springframework:
+                boot:
+                    autoconfigure: WARN
+        nl:
+            bsoft:
+                kerk: INFO
+    file:
+        name: 'logs/${spring.application.name}.log'
+
+management:
+    info:
+        env:
+            enabled: true
+    server:
+        port: 8081
+    endpoint:
+        health:
+            show-details: always
+        metrics:
+            enabled: true
+        prometheus:
+            enabled: true
+    endpoints:
+        web:
+            path-mapping:
+                info: app-info
+                health: app-health
+            exposure:
+                include: '*'
+                exclude:
+
+info:
+    app:
+        name: '@project.name@'
+        description: '@project.description@'
+        version: '@project.version@'
+        java:
+            version: '@java.version@'
+
+client:
+    items-api: http://localhost:8080/api/items/v1

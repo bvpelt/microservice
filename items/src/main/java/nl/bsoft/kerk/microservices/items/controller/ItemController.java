@@ -5,11 +5,13 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import nl.bsoft.kerk.microservices.items.model.Item;
 import nl.bsoft.kerk.microservices.items.service.ItemService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
+
 import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -23,14 +25,14 @@ public class ItemController {
     private ItemService itemService;
 
     @GetMapping("/item")
-    ResponseEntity<List<Item>> getItems() {
-        List<Item> items = itemService.getItems();
+    ResponseEntity<Page<Item>> getItems(Pageable pageable) {
+        Page<Item> items = itemService.getItems(pageable);
 
         return ResponseEntity.status(HttpStatus.OK).body(items);
     }
 
     @GetMapping("/item/{id}")
-    ResponseEntity<Item>  getItemById(@PathVariable Long id) {
+    public ResponseEntity<Item> getItemById(@PathVariable Long id) {
         Optional<Item> item = itemService.getItemById(id);
 
         Item result = null;
